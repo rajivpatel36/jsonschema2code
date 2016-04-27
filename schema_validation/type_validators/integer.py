@@ -16,4 +16,8 @@ class IntegerTypeSchemaValidator(BaseTypeSchemaValidator):
                 re.match("(^[<>]=?[-]?\d+(?:\.\d+|))", constraint),
             ])
             if not is_valid_constraint:
-                raise SchemaValidationError("Invalid constraint specification for integer type: {}".format(constraint))
+                raise SchemaValidationError(
+                    "Invalid constraint specification for integer type: {constraint}".format(constraint=constraint),
+                    self.class_name,
+                    self.property_name
+                )
