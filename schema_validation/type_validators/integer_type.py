@@ -5,9 +5,13 @@ import six
 
 from exceptions import SchemaValidationError
 from schema_validation.type_validators.base import BaseTypeSchemaValidator
+from types.type_names import INTEGER
 
 
 class IntegerTypeSchemaValidator(BaseTypeSchemaValidator):
+
+    type = INTEGER
+
     def validate(self, definitions, **kwargs):
         constraint = kwargs.get("constraint", None)
         if constraint:
