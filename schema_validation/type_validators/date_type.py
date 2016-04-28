@@ -10,5 +10,6 @@ class DateTypeSchemaValidator(BaseTypeSchemaValidator):
     type = DATE
 
     def validate(self, definitions, **kwargs):
-        if not kwargs.get("format", None):
+        format = kwargs.pop("format", None)
+        if not format:
             raise SchemaValidationError("No date format specified for date type", self.class_name, self.property_name)

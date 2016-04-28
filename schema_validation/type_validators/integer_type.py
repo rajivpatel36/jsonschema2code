@@ -13,7 +13,7 @@ class IntegerTypeSchemaValidator(BaseTypeSchemaValidator):
     type = INTEGER
 
     def validate(self, definitions, **kwargs):
-        constraint = kwargs.get("constraint", None)
+        constraint = kwargs.pop("constraint", None)
         if constraint:
             is_valid_constraint = all([
                 isinstance(constraint, *six.string_types),
