@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+from exceptions import SchemaValidationError
+
 
 class BaseTypeSchemaValidator(object):
 
@@ -11,3 +13,15 @@ class BaseTypeSchemaValidator(object):
 
     def validate(self, definitions, **kwargs):
         pass
+
+    def do_validation(self, definitions, **kwargs):
+        self.validate(definitions, **kwargs)
+        if len(kwargs) > 0:
+            raise SchemaValidationError(
+                message="Unsupported parameter ({parameter}) specified for {type} type.".format(
+                    parameter=kwargs.popitem()[0],
+                    type=self.type
+                ),
+                class_name=self.class_name,
+                property_name=self.property_name
+            )
