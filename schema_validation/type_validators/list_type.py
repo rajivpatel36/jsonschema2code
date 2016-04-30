@@ -37,5 +37,8 @@ class ListTypeSchemaValidator(BaseTypeSchemaValidator):
                 self.class_name,
                 self.property_name
             )
-        list_members_validator = BASIC_TYPE_SCHEMA_VALIDATOR_MAPPING[list_members_type]
+        list_members_validator = BASIC_TYPE_SCHEMA_VALIDATOR_MAPPING[list_members_type](
+            self.class_name,
+            self.property_name
+        )
         list_members_validator.validate(definitions, **list_members)
