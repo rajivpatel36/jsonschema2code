@@ -33,7 +33,9 @@ class ListTypeSchemaValidator(BaseTypeSchemaValidator):
             )
         if list_members_type not in BASIC_TYPE_SCHEMA_VALIDATOR_MAPPING:
             raise SchemaValidationError(
-                "List members type is not valid basic type."
+                "List members type is not valid basic type: {type}".format(type=list_members_type),
+                self.class_name,
+                self.property_name
             )
         list_members_validator = BASIC_TYPE_SCHEMA_VALIDATOR_MAPPING[list_members_type]
         list_members_validator.validate(definitions, **list_members)
