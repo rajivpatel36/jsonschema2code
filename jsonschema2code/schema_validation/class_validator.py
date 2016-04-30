@@ -2,8 +2,8 @@ from __future__ import unicode_literals
 
 import six
 
-from exceptions import SchemaValidationError
-from schema_validation.type_validators.mapping.all_type_mapping import ALL_TYPE_SCHEMA_VALIDATOR_MAPPING
+from jsonschema2code.exceptions import SchemaValidationError
+from jsonschema2code.schema_validation.type_validators.mapping.all_type_mapping import ALL_TYPE_SCHEMA_VALIDATOR_MAPPING
 
 
 class ClassSchemaValidator(object):

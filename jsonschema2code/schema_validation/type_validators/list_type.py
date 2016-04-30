@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
 
-from exceptions import SchemaValidationError
-from schema_validation.type_validators.base import BaseTypeSchemaValidator
-from schema_validation.type_validators.mapping.basic_type_mapping import BASIC_TYPE_SCHEMA_VALIDATOR_MAPPING
-from types.type_names import LIST
+from jsonschema2code.exceptions import SchemaValidationError
+from jsonschema2code.schema_validation.type_validators.mapping.basic_type_mapping import BASIC_TYPE_SCHEMA_VALIDATOR_MAPPING
+from jsonschema2code.schema_validation.type_validators.base import BaseTypeSchemaValidator
+from jsonschema2code.types.type_names import LIST
 
 
 class ListTypeSchemaValidator(BaseTypeSchemaValidator):

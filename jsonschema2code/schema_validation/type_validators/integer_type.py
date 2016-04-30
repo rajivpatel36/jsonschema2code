@@ -1,11 +1,12 @@
 from __future__ import unicode_literals
 
 import re
+
 import six
 
-from exceptions import SchemaValidationError
-from schema_validation.type_validators.base import BaseTypeSchemaValidator
-from types.type_names import INTEGER
+from jsonschema2code.exceptions import SchemaValidationError
+from jsonschema2code.schema_validation.type_validators.base import BaseTypeSchemaValidator
+from jsonschema2code.types.type_names import INTEGER
 
 
 class IntegerTypeSchemaValidator(BaseTypeSchemaValidator):

@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
 
 from copy import deepcopy
-from exceptions import SchemaValidationError
 
-from schema_validation.class_validator import ClassSchemaValidator
+from jsonschema2code.exceptions import SchemaValidationError
+from jsonschema2code.schema_validation.class_validator import ClassSchemaValidator
 
 
 def validate_schema(schema):

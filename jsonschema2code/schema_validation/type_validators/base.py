@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from exceptions import SchemaValidationError
+from jsonschema2code.exceptions import SchemaValidationError
 
 
 class BaseTypeSchemaValidator(object):
