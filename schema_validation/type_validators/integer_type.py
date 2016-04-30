@@ -14,7 +14,7 @@ class IntegerTypeSchemaValidator(BaseTypeSchemaValidator):
 
     def validate(self, definitions, **kwargs):
         constraint = kwargs.pop("constraint", None)
-        if constraint:
+        if constraint is None:
             is_valid_constraint = all([
                 isinstance(constraint, *six.string_types),
                 re.match("(^[<>]=?[-]?\d+(?:\.\d+|))", constraint),
