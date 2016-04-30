@@ -6,7 +6,7 @@ from exceptions import SchemaValidationError
 from schema_validation.type_validators.mapping.all_type_mapping import ALL_TYPE_SCHEMA_VALIDATOR_MAPPING
 
 
-class ClassValidator(object):
+class ClassSchemaValidator(object):
     def __init__(self, class_name):
         self.class_name = class_name
 
