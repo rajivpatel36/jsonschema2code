@@ -27,7 +27,7 @@ class CustomTypeSchemaValidator(BaseTypeSchemaValidator):
             )
         if ref_type not in definitions:
             raise SchemaValidationError(
-                "Ref object type not specified in 'definitions' in schema.",
+                "Ref object type not specified in 'definitions' in schema: {type}.".format(type=ref_type),
                 self.class_name,
                 self.property_name
             )
