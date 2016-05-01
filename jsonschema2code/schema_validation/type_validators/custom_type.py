@@ -19,7 +19,7 @@ class CustomTypeSchemaValidator(BaseTypeSchemaValidator):
                 self.class_name,
                 self.property_name
             )
-        if not isinstance(ref_type, *six.text_type):
+        if not isinstance(ref_type, *six.string_types):
             raise SchemaValidationError(
                 "Ref object type must be a string.",
                 self.class_name,

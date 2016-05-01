@@ -12,7 +12,7 @@ class ClassSchemaValidator(object):
 
     def validate(self, definitions, **kwargs):
         description = kwargs.pop("_description", None)
-        if description is not None and not isinstance(description, *six.text_type):
+        if description is not None and not isinstance(description, *six.string_types):
             raise SchemaValidationError(
                 "Class description must be a string.",
                 self.class_name
